@@ -212,7 +212,7 @@ public class SwerveModuleSparkMax extends SubsystemBase {
 
     ShuffleboardContent.initDriveShuffleboard(this);
     ShuffleboardContent.initTurnShuffleboard(this);
-    ShuffleboardContent.initCANCoderShuffleboard(this);
+    // ShuffleboardContent.initCANCoderShuffleboard(this);
     ShuffleboardContent.initBooleanShuffleboard(this);
     ShuffleboardContent.initCoderBooleanShuffleboard(this);
   }
