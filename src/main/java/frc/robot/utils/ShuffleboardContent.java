@@ -113,7 +113,7 @@ public class ShuffleboardContent {
 
         }
 
-        public static void initCANCoderShuffleboard(SwerveModuleSparkMax2 m_sm) {
+        public static void initCANCoderShuffleboard(SwerveModuleSparkMax m_sm) {
                 ModulePosition m_modulePosition = m_sm.getModulePosition();
                 int m_moduleNumber = m_modulePosition.ordinal();
                 String abrev = m_sm.modAbrev[m_moduleNumber];

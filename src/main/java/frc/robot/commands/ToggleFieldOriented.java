@@ -22,5 +22,6 @@ public class ToggleFieldOriented extends InstantCommand {
   @Override
   public void initialize() {
     m_drive.m_fieldOriented = !m_drive.m_fieldOriented;
+    m_drive.zeroHeading();
   }
 }

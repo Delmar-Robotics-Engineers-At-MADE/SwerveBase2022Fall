@@ -188,7 +188,7 @@ public class SwerveModuleSparkMax2 extends SubsystemBase {
 
     m_turnPIDController.enableContinuousInput(-180, 180);
 
-    m_turnPIDController.setP(Pref.getPref("SwerveTurnPoskP"));
+    m_turnPIDController.setP(0.3/*Pref.getPref("SwerveTurnPoskP")*/);
     m_turnPIDController.setI(Pref.getPref("SwerveTurnPoskI"));
     m_turnPIDController.setD(Pref.getPref("SwerveTurnPoskD"));
 
@@ -210,7 +210,7 @@ public class SwerveModuleSparkMax2 extends SubsystemBase {
 
     // ShuffleboardContent.initDriveShuffleboard(this);
     // ShuffleboardContent.initTurnShuffleboard(this);
-    ShuffleboardContent.initCANCoderShuffleboard(this);
+    // ShuffleboardContent.initCANCoderShuffleboard(this);
     // ShuffleboardContent.initBooleanShuffleboard(this);
     // ShuffleboardContent.initCoderBooleanShuffleboard(this);
   }
