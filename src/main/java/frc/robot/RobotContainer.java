@@ -74,7 +74,7 @@ public class RobotContainer {
             m_robotDrive,
             () -> leftJoystick.getRawAxis(1),
             () -> leftJoystick.getRawAxis(0),
-            () -> leftJoystick.getRawAxis(2)));
+            () -> leftJoystick.getRawAxis(3)));
 
     driver.leftTrigger.whileHeld(new JogTurnModule(
         m_robotDrive,
