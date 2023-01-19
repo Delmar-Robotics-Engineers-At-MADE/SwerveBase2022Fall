@@ -102,10 +102,10 @@ public class RobotContainer {
         false));
 
 
-        JoystickButton button_8 = new JoystickButton(leftJoystick,8);
+        JoystickButton button_1 = new JoystickButton(leftJoystick,1);
         JoystickButton button_7 = new JoystickButton(leftJoystick, 7);       
 
-        button_8.whenPressed(new ToggleFieldOriented(m_robotDrive));
+        button_1.whenPressed(new ToggleFieldOriented(m_robotDrive));
     // position turn modules individually
     // driver.X_button.whenPressed(new PositionTurnModule(m_robotDrive,
     // ModulePosition.FRONT_LEFT));
