@@ -15,8 +15,8 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.Constants.DriveConstants.ModulePosition;
 import frc.robot.Constants.OIConstants;
 import frc.robot.commands.ToggleFieldOriented;
-import frc.robot.commands.auto.DriveForward;
-import frc.robot.commands.auto.FiveBallAuto;
+// import frc.robot.commands.auto.DriveForward;
+// import frc.robot.commands.auto.FiveBallAuto;
 import frc.robot.commands.swerve.JogDriveModule;
 import frc.robot.commands.swerve.JogTurnModule;
 import frc.robot.commands.swerve.PositionTurnModule;
@@ -57,7 +57,7 @@ public class RobotContainer {
     // Configure the button bindings
 
     m_fieldSim.initSim();
-    initializeAutoChooser();
+    // initializeAutoChooser();
     // sc.showAll();
     // Configure default commands
    // m_robotDrive.setDefaultCommand(
@@ -74,7 +74,7 @@ public class RobotContainer {
             m_robotDrive,
             () -> leftJoystick.getRawAxis(1),
             () -> leftJoystick.getRawAxis(0),
-            () -> leftJoystick.getRawAxis(3)));
+            () -> leftJoystick.getRawAxis(2)));
 
     driver.leftTrigger.whileHeld(new JogTurnModule(
         m_robotDrive,
@@ -118,14 +118,14 @@ public class RobotContainer {
 
   }
 
-  private void initializeAutoChooser() {
-    m_autoChooser.setDefaultOption("Do Nothing", new WaitCommand(0));
-    m_autoChooser.addOption("Drive Forward", new DriveForward(m_robotDrive));
-    m_autoChooser.addOption("5 Ball Auto", new FiveBallAuto(m_robotDrive));
+  // private void initializeAutoChooser() {
+  //   m_autoChooser.setDefaultOption("Do Nothing", new WaitCommand(0));
+  //   m_autoChooser.addOption("Drive Forward", new DriveForward(m_robotDrive));
+  //   m_autoChooser.addOption("5 Ball Auto", new FiveBallAuto(m_robotDrive));
 
-    SmartDashboard.putData("Auto Selector", m_autoChooser);
+  //   SmartDashboard.putData("Auto Selector", m_autoChooser);
 
-  }
+  // }
 
   public void simulationPeriodic() {
     m_fieldSim.periodic();
