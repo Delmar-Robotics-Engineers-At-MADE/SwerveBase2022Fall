@@ -52,8 +52,8 @@ public class GamepadButtons {
         leftTrigger = new JoystickButton(controller, 5);
         rightTrigger = new JoystickButton(controller, 6);
 
-        leftBumper = new JoystickButton(controller, 7);
-        rightBumper = new JoystickButton(controller, 8);
+        leftBumper = new JoystickButton(controller, 6);
+        rightBumper = new JoystickButton(controller, 1);
 
 
         back = new JoystickButton(controller, 9);
