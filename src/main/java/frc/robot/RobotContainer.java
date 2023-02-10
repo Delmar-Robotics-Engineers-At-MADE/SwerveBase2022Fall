@@ -21,6 +21,7 @@ import frc.robot.commands.swerve.JogDriveModule;
 import frc.robot.commands.swerve.JogTurnModule;
 import frc.robot.commands.swerve.PositionTurnModule;
 import frc.robot.commands.swerve.SetSwerveDrive;
+import frc.robot.commands.swerve.SetSwerveDriveSlow;
 import frc.robot.simulation.FieldSim;
 import frc.robot.subsystems.DriveSubsystem;
 
@@ -70,11 +71,11 @@ public class RobotContainer {
         // () -> -m_coDriverController.getRawAxis(0),
         // () -> -m_coDriverController.getRawAxis(4)));
         m_robotDrive.setDefaultCommand(
-        new SetSwerveDrive(
+        new SetSwerveDriveSlow(
             m_robotDrive,
             () -> leftJoystick.getRawAxis(1),
             () -> leftJoystick.getRawAxis(0),
-            () -> leftJoystick.getRawAxis(2)));
+            () -> leftJoystick.getRawAxis(3)));
 
     driver.leftTrigger.whileHeld(new JogTurnModule(
         m_robotDrive,
