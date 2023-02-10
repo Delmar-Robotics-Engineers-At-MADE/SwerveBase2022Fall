@@ -43,9 +43,9 @@ public class RobotContainer {
 
   static Joystick leftJoystick = new Joystick(OIConstants.kDriverControllerPort);
 
-  private XboxController m_coDriverController = new XboxController(OIConstants.kCoDriverControllerPort);
+  private Joystick m_coDriverController = new Joystick(OIConstants.kCoDriverControllerPort);
 
-  final GamepadButtons driver = new GamepadButtons(m_coDriverController, true);
+  final JoystickButton button_2 = new JoystickButton(leftJoystick, 2);
 
   /**
    * The container for the robot. Contains subsystems, OI devices, and commands.
@@ -75,32 +75,33 @@ public class RobotContainer {
             m_robotDrive,
             () -> leftJoystick.getRawAxis(1),
             () -> leftJoystick.getRawAxis(0),
-            () -> leftJoystick.getRawAxis(3)));
+            () -> leftJoystick.getRawAxis(2)));
 
-    driver.leftTrigger.whileHeld(new JogTurnModule(
-        m_robotDrive,
-        () -> -m_coDriverController.getRawAxis(1),
-        () -> m_coDriverController.getRawAxis(0),
-        () -> m_coDriverController.getRawAxis(2),
-        () -> m_coDriverController.getRawAxis(3)));
 
-    // individual modules
-    driver.leftBumper.whileHeld(new JogDriveModule(
+      button_2.whileHeld(new SetSwerveDrive(
         m_robotDrive,
-        () -> -m_coDriverController.getRawAxis(1),
-        () -> m_coDriverController.getRawAxis(0),
-        () -> m_coDriverController.getRawAxis(2),
-        () -> m_coDriverController.getRawAxis(3),
-        true));
+        () -> leftJoystick.getRawAxis(1),
+        () -> leftJoystick.getRawAxis(0),
+        () -> leftJoystick.getRawAxis(2)));
+       // () -> m_coDriverController.getRawAxis(3)));
 
-    // all modules
-    driver.rightBumper.whileHeld(new JogDriveModule(
-        m_robotDrive,
-        () -> -m_coDriverController.getRawAxis(1),
-        () -> m_coDriverController.getRawAxis(0),
-        () -> m_coDriverController.getRawAxis(2),
-        () -> m_coDriverController.getRawAxis(3),
-        false));
+    // // individual modules
+    // driver.leftBumper.whileHeld(new JogDriveModule(
+    //     m_robotDrive,
+    //     () -> -m_coDriverController.getRawAxis(1),
+    //     () -> m_coDriverController.getRawAxis(0),
+    //     () -> m_coDriverController.getRawAxis(2),
+    //     () -> m_coDriverController.getRawAxis(3),
+    //     true));
+
+    // // all modules
+    // driver.rightBumper.whileHeld(new JogDriveModule(
+    //     m_robotDrive,
+    //     () -> -m_coDriverController.getRawAxis(1),
+    //     () -> m_coDriverController.getRawAxis(0),
+    //     () -> m_coDriverController.getRawAxis(2),
+    //     () -> m_coDriverController.getRawAxis(3),
+    //     false));
 
 
         JoystickButton button_1 = new JoystickButton(leftJoystick,1);
