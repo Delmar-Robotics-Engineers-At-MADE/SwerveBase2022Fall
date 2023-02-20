@@ -63,8 +63,8 @@ public class SetSwerveDriveSlow extends CommandBase {
     double strafe_sl = m_slewY.calculate(strafe);
     double rotation_sl = m_slewRot.calculate(rotation);
 
-    throttle_sl *= 0.5;
-    strafe_sl *= 0.5;
+    throttle_sl *= 0.7;
+    strafe_sl *= 0.7;
     rotation_sl *= 0.5;
 
 
